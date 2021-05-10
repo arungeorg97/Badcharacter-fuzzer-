@@ -9,6 +9,9 @@ import wmi
 from pydbg import *
 from pydbg.defines import *
 
+#bad Character Detection for Exploit Development
+#Written for http get , can be modified to work with other http methods and header / body values
+#Modified, works well with other protocol as well. only checked for ftp
 
 # Global variables
 allchars = (
