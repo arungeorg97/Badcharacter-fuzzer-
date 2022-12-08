@@ -13,7 +13,7 @@ This repository contains a script that i had used to identity bad characters whe
   - Written for HTTP . With minor modifaction this can be made to work with FTP / Telnet.
 
 - How to make it work:
-  - Modify the template to match the requirement (HTTP /FTP). In the poc , HTTP is choosen and UserID={} in Cookie Header will be fuzzed.
+  - Modify the template to match the requirement (HTTP /FTP). In the poc , HTTP is choosen and UserID value in the Cookie Header will be fuzzed.
   - modify the script to change the desired process to hook for. Note that the service must able to start and stop with sc.exe (start / stop).
   - Every chacrater wil be fuzzed in the format - "A"*8 + cur_char * 92 + "B"*8
     -  (eg "for 0x00  = 4141414141414141 + 00 * 92 + 4242424242424242").
