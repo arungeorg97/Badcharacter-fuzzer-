@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Locked</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #f00;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .timer {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .instructions {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Your System Has Been Locked!</div>
+        <p>Your files have been encrypted. To restore access, send 1 BTC to the following wallet address:</p>
+        <p><strong>1FakeWalletAddress123456789</strong></p>
+        <div class="timer">Time Remaining: <span id="countdown">24:00:00</span></div>
+        <p class="instructions">Failure to pay will result in permanent loss of your files.</p>
+    </div>
+</body>
+<script>
+    // Simple countdown timer (24 hours)
+    const countdownElement = document.getElementById('countdown');
+    let timeRemaining = 86400; // 24 hours in seconds
+    setInterval(() => {
+        if (timeRemaining <= 0) return;
+        timeRemaining -= 1;
+        const hours = Math.floor(timeRemaining / 3600).toString().padStart(2, '0');
+        const minutes = Math.floor((timeRemaining % 3600) / 60).toString().padStart(2, '0');
+        const seconds = (timeRemaining % 60).toString().padStart(2, '0');
+        countdownElement.innerText = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+</script>
+</html>
